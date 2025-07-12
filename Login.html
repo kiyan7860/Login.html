@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <script>
+        function validateLogin(event) {
+            event.preventDefault(); // Stop form from submitting
+
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Set your fixed password here
+            const correctUsername = "KIYAN";
+            const correctPassword = "MIRZA";
+
+            if (username === correctUsername && password === correctPassword) {
+                window.location.href = "display.html"; // Redirect if login is successful
+            } else {
+                alert("Invalid username or password!");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <form onsubmit="validateLogin(event)">
+        Username: <input type="text" id="username"><br><br>
+        Password: <input type="password" id="password"><br><br>
+        <input type="submit" value="Login">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>
